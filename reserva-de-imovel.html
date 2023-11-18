@@ -1,70 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <title>Reserva de Imóvel</title>
-        <meta
-            property="og:title"
-            content="Reserva-de-Imvel - Site Programação WEB"
-            />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charset="utf-8" />
-        <meta property="twitter:card" content="summary_large_image" />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-            data-tag="font"
-            />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Jockey+One:wght@400&amp;display=swap"
-            data-tag="font"
-            />
-            <link rel="stylesheet" href="css/style.css" />
-            <link href="css/reserva-de-imovel.css" rel="stylesheet" />
-    </head>
-    <body>
-        
-        <div>
-            
-            <div class="container">
-                <div class="principal">
-                    <span class="principal-text">Reserva de Imóvel</span>
-                </div>
-                <div class="form">
-                    <span class="form-text">Cliente</span>
-                    <input type="text" class="form-textinput input" />
-                    <span class="form-text">CEP</span>
-                    <input type="text" class="form-textinput input" />
-                    <span class="form-text">Andar</span>
-                    <select class="form-select">
-                        <option value="Selecionar">Selecionar</option>
-                        <option value="Option 2">1º Andar</option>
-                        <option value="Option 3">2º Andar</option>
-                        <option value="Option 4">3º Andar</option>
-                        <option value="Option 5">4º Andar</option>
-                        <option value="Option 6">5º Andar</option>
-                        <option value="Option 7">6º Andar</option>
-                        <option value="Option 8">7º Andar</option>
-                        <option value="Option 9">8º Andar</option>
-                        <option value="Option 10">9º Andar</option>
-                        <option value="Option 11">10º Andar</option>
-                        <option value="Option 12">11º Andar</option>
-                        <option value="Option 13">12º Andar</option>
-                    </select>
-                    <span class="form-text">Número</span>
-                    <input type="text" class="form-textinput input" />
-                    <button type="button" class="adicionar-button button" onclick="exibirMensagem()">
-                        <span>
-                            <span>Adicionar</span>
-                        </span>
-                    </button>
-                    <script>
-                        function exibirMensagem() {
-                            alert("Aprovado pelo SERASA");
+
+<head>
+    <title>Reserva de Imóvel</title>
+    <meta property="og:title" content="Reserva-de-Imvel - Site Programação WEB" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jockey+One:wght@400&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="css/reserva-de-imovel.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div>
+
+        <div class="container">
+            <div class="principal">
+                <span class="principal-text">Reserva de Imóvel</span>
+            </div>
+            <div class="form">
+                <span class="form-text">Cliente</span>
+                <input type="text" class="form-textinput input" id="campoCliente" />
+                <span class="form-text">CEP</span>
+                <input type="text" class="form-textinput input" id="campoCEP" />
+                <span class="form-text">Andar</span>
+                <select class="form-select" id="campoAndar">
+                    <option value="Selecionar">Selecionar</option>
+                    <option value="Option 2">1º Andar</option>
+                    <option value="Option 3">2º Andar</option>
+                    <option value="Option 4">3º Andar</option>
+                    <option value="Option 5">4º Andar</option>
+                    <option value="Option 6">5º Andar</option>
+                    <option value="Option 7">6º Andar</option>
+                    <option value="Option 8">7º Andar</option>
+                    <option value="Option 9">8º Andar</option>
+                    <option value="Option 10">9º Andar</option>
+                    <option value="Option 11">10º Andar</option>
+                    <option value="Option 12">11º Andar</option>
+                    <option value="Option 13">12º Andar</option>
+                </select>
+                <span class="form-text">Número</span>
+                <input type="text" class="form-textinput input" id="campoNumero" />
+                <button type="button" class="adicionar-button button" onclick="verificarCampos()">
+                    <span>
+                        <span>Adicionar</span>
+                    </span>
+                </button>
+                <script>
+                    function verificarCampos() {
+                        var campoCliente = document.getElementById("campoCliente").value.trim();
+                        var campoCEP = document.getElementById("campoCEP").value.trim();
+                        var campoAndar = document.getElementById("campoAndar").value.trim();
+                        var campoNumero = document.getElementById("campoNumero").value.trim();
+
+                        if (campoCliente === "") {
+                            alert("Campo Cliente precisa ser preenchido.");
+                            return;
                         }
-                    </script>
-                </div>
+
+                        if (campoCEP === "") {
+                            alert("Campo CEP precisa ser preenchido.");
+                            return;
+                        }
+
+                        if (campoAndar === "Selecionar") {
+                            alert("Campo Andar precisa ser selecionado.");
+                            return;
+                        }
+
+                        if (campoNumero === "") {
+                            alert("Campo Número precisa ser preenchido.");
+                            return;
+                        }
+
+                        alert("Aprovado pelo SERASA");
+                    }
+                </script>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

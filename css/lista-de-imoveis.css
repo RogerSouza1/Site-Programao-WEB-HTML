@@ -241,6 +241,11 @@ body {
   width: var(--dl-size-size-xsmall);
   height: var(--dl-size-size-xsmall);
 }
+
+.container-img {
+  height: 100%    
+}
+
 @media(max-width: 1200px) {
   .lista-de-imveis-header {
     width: 100%;
